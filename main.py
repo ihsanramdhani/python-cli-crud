@@ -1,15 +1,26 @@
 database = []
 
-def create_data():
-    input_nama = input("Masukkan nama: ")
-    input_pekerjaan = input("Masukkan pekerjaan: ")
-    input_umur = input("Masukkan umur: ")
+def input_nama():
+    var = input("Masukkan nama: ")
+    return var
 
+def input_pekerjaan():
+    var = input("Masukkan pekerjaan: ")
+    return var
+
+def input_umur():
+    var = input("Masukkan umur: ")
+    return var
+
+def create_data():
+    nama = input_nama()
+    pekerjaan = input_pekerjaan()
+    umur = input_umur()
     data = {
         "id": len(database) + 1,
-        "nama": input_nama,
-        "pekerjaan": input_pekerjaan,
-        "umur": input_umur
+        "nama": nama,
+        "pekerjaan": pekerjaan,
+        "umur": umur
     }
 
     database.append(data)
@@ -46,9 +57,9 @@ def update_data():
     flag = False
     for data in database:
         if int(choice) == data["id"]:
-            data["nama"] = input("Masukkan nama yang baru: ")
-            data["pekerjaan"] = input("Masukkan pekerjaan yang baru: ")
-            data["umur"] = input("Masukkan umur yang baru: ")
+            data["nama"] = input_nama()
+            data["pekerjaan"] = input_pekerjaan()
+            data["umur"] = input_umur()
             print("")
             print("Update data sukses")
             print(f"Nama: {data['nama']}")
