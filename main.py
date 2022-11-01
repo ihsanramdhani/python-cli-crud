@@ -16,21 +16,77 @@ def create_data():
 
 def get_datas():
     if database == []:
-        print("Ga ada data di databasenya bro")
+        print("Databasenya kosong")
     
     for data in database:
-        print(f'{data["id"]}.')
+        print(f'ID: {data["id"]}')
         print(f"Nama: {data['nama']}")
         print(f"Pekerjaan: {data['pekerjaan']}")
         print(f"Umur: {data['umur']}")
         print("")
+
+def get_data():
+    choice = input("Masukkan id: ")
+
+    flag = False
+    for data in database:
+        if int(choice) == data['id']:
+            print(f"Nama: {data['nama']}")
+            print(f"Pekerjaan: {data['pekerjaan']}")
+            print(f"Umur: {data['umur']}")
+            print("")
+            flag = True
+
+    if flag == False:
+        print("Data yang kamu cari ga ada")
+
+def update_data():
+    choice = input("Masukkan id: ")
+
+    flag = False
+    for data in database:
+        if int(choice) == data["id"]:
+            data["nama"] = input("Masukkan nama yang baru: ")
+            data["pekerjaan"] = input("Masukkan pekerjaan yang baru: ")
+            data["umur"] = input("Masukkan umur yang baru: ")
+            print("")
+            print("Update data sukses")
+            print(f"Nama: {data['nama']}")
+            print(f"Pekerjaan: {data['pekerjaan']}")
+            print(f"Umur: {data['umur']}")
+            print("")
+            flag = True
+
+    if flag == False:
+        print("Kamu tidak bisa update data karena datanya ga ada")
+
+def delete_data():
+    choice = input("Masukkan id: ")
+
+    flag = False
+    for data in database:
+        if int(choice) == data["id"]:
+            database.remove(data)
+            print(f"ID no {data['id']} berhasil di delete")
+            flag = True
+            get_datas()
+
+    if flag == False:
+        print("Gabisa delete data yang dari awal juga ga ada")
 
 while True:
     choice = input("Pilih: ")
     if choice == "1":
         create_data()
     elif choice == "2":
-        datas = get_datas()
+        get_datas()
+    elif choice == "3":
+        get_data()
+    elif choice == "4":
+        update_data()
+    elif choice == "5":
+        delete_data()
+
 
 
 
