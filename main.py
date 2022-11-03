@@ -1,29 +1,36 @@
 from helper.helper import Helper
 from core.app import App
+from core.menu import Menu
 
 class Main:
     def __init__(self):
-        self.helper = Helper()
+        self.helper = Helper
         self.app = App(self.helper)
+        self.menu = Menu(self.app)
 
     def run(self):
-        choice = input("Pilih: ")
-        if choice == "1":
-            self.app.create_data()
-        elif choice == "2":
-            self.app.get_datas()
-        elif choice == "3":
-            self.app.get_data()
-        elif choice == "4":
-            self.app.update_data()
-        elif choice == "5":
-            self.app.delete_data()
+
+        print(" ""\x1B[4m"+
+        "                                        "
+        +"\x1B[0m")
+        text = "Welcome to the CRUD Program"
+        rata_tengah = text.center(40)
+        print("|"+rata_tengah+"|")
+        print("|Please choose any avalaible menu below: |")
+        print("|1. Create Data                          |")
+        print("|2. Get all data                         |")
+        print("|3. Get 1 data                           |")
+        print("|4. Update Data                          |")
+        print("|"+
+        "\x1B[4m"+"5. Delete data                          "
+        +"\x1B[0m"+"|")
+
+        choice = input("Pilih menu: ")
+        self.menu.get_menu(choice)
 
 m = Main()
 while True:
     m.run()
-
-
 
 # database = []
 

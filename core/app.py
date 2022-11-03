@@ -19,12 +19,14 @@ class App:
 
         self.database.append(data)
         print()
-        print("Data berhasil dibuat")
+        print("Data berhasil dibuat!")
         print()
 
     def get_datas(self):
         if self.database == []:
+            print()
             print("Databasenya kosong")
+            print()
 
         for data in self.database:
             print()
@@ -48,7 +50,9 @@ class App:
                 flag = True
 
         if flag == False:
-            print("Data yang kamu cari ga ada")
+            print()
+            print("Data yang kamu cari ga ada!")
+            print()
 
     def update_data(self):
         choice = input("Masukkan id: ")
@@ -69,8 +73,10 @@ class App:
                 flag = True
 
         if flag == False:
+            print()
             print("Kamu tidak bisa update data karena"
             " datanya ga ada")
+            print()
 
     def delete_data(self):
         choice = input("Masukkan id: ")
@@ -79,13 +85,17 @@ class App:
         for data in self.database:
             if int(choice) == data["id"]:
                 self.database.remove(data)
+                print()
                 print(f"ID no {data['id']} berhasil di delete")
+                print()
                 flag = True
-                self.get_datas()
+
 
         if flag == False:
+            print()
             print("Gabisa delete data yang dari awal" 
-            " juga ga ada")
+            " juga ga ada!")
+            print()
 
 
 
