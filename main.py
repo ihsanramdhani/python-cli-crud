@@ -10,20 +10,20 @@ class Main:
 
     def run(self):
 
-        print(" ""\x1B[4m"+
+        print(" ""\x1B[4m" +
         "                                        "
-        +"\x1B[0m")
+        + "\x1B[0m")
         text = "Welcome to the CRUD Program"
         rata_tengah = text.center(40)
-        print("|"+rata_tengah+"|")
+        print("|" + rata_tengah + "|")
         print("|Please choose any avalaible menu below: |")
         print("|1. Create Data                          |")
         print("|2. Get all data                         |")
         print("|3. Get 1 data                           |")
         print("|4. Update Data                          |")
         print("|"+
-        "\x1B[4m"+"5. Delete data                          "
-        +"\x1B[0m"+"|")
+        "\x1B[4m" + "5. Delete data                          "
+        + "\x1B[0m" + "|")
 
         choice = input("Pilih menu: ")
         self.menu.get_menu(choice)

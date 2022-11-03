@@ -19,7 +19,7 @@ class App:
 
         self.database.append(data)
         print()
-        print("Data berhasil dibuat!")
+        print("Data berhasil dibuat")
         print()
 
     def get_datas(self):
@@ -51,7 +51,7 @@ class App:
 
         if flag == False:
             print()
-            print("Data yang kamu cari ga ada!")
+            print("Data yang kamu cari ga ada")
             print()
 
     def update_data(self):
@@ -75,7 +75,7 @@ class App:
         if flag == False:
             print()
             print("Kamu tidak bisa update data karena"
-            " datanya ga ada")
+            + " datanya ga")
             print()
 
     def delete_data(self):
@@ -94,7 +94,7 @@ class App:
         if flag == False:
             print()
             print("Gabisa delete data yang dari awal" 
-            " juga ga ada!")
+            + " juga ga ada")
             print()
 
 
