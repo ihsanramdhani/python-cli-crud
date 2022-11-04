@@ -9,6 +9,16 @@ class Helper:
             return False
         return True
 
+    def print_data(self, choice):
+        data = self.database[choice - 1]
+
+        print()
+        print(f'ID: {data["id"]}')
+        print(f"Name: {data['name']}")
+        print(f"Division: {data['division']}")
+        print(f"Age: {data['age']}")
+        print()
+
     def print_all_data(self):
         for data in self.database:
             print()
