@@ -1,15 +1,42 @@
 class Helper:
-    @staticmethod
-    def input_nama():
-        var = input("Masukkan nama: ")
+    def __init__(self):
+        self.database = []
+        data = {}
+
+    def validate(self, data):
+        if data['name'] == '' or data['division'] == '' or data['age'] == '':
+            print()
+            print("Data shouldn't empty")
+            return False
+        return True
+
+    def print_all_data(self):
+        for data in self.database:
+            print()
+            print(f'ID: {data["id"]}')
+            print(f"Name: {data['name']}")
+            print(f"Division: {data['division']}")
+            print(f"Age: {data['age']}")
+            print()     
+
+    def input_name(self):
+        var = input("Insert name: ")
         return var
     
-    @staticmethod
-    def input_pekerjaan():
-        var = input("Masukkan pekerjaan: ")
+    def input_division(self):
+        var = input("Insert division: ")
         return var
 
-    @staticmethod
-    def input_umur():
-        var = input("Masukkan umur: ")
+    def input_age(self):
+        var = input("Insert age: ")
         return var
+
+    def operation_success(self):
+        print()
+        print("Operation Success")
+        print()
+
+    def data_not_found(self):
+        print()
+        print("Data Not Found")
+        print()   
