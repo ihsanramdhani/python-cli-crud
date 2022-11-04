@@ -1,7 +1,6 @@
 class Helper:
     def __init__(self):
         self.database = []
-        data = {}
 
     def validate(self, data):
         if data['name'] == '' or data['division'] == '' or data['age'] == '':
