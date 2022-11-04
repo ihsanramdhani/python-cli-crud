@@ -7,10 +7,14 @@ class Main:
         self.helper = Helper()
 
     def run(self):
-        self.helper.header()
-        choice = input("Choose menu: ")
-        self.menu.get_menu(choice)
+        while True:
+            self.helper.header()
+
+            choice = input("Choose menu: ")
+            
+            if choice.lower() == "exit":
+                break
+            self.menu.get_menu(choice)
 
 m = Main()
-while True:
-    m.run()
+m.run()

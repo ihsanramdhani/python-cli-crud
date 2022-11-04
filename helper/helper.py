@@ -50,9 +50,10 @@ class Helper:
         print("|" + centered_text + "|")
         print("|Please choose any avalaible menu below: |")
         print("|1. Create Data                          |")
-        print("|2. Get all data                         |")
-        print("|3. Get specific data                    |")
+        print("|2. Get All Data                         |")
+        print("|3. Get Specific Data                    |")
         print("|4. Update Data                          |")
+        print("|5. Delete Data                          |")
         print("|"+
-        "\x1B[4m" + "5. Delete data                          "
-        + "\x1B[0m" + "|")   
+        "\x1B[4m" + "Type 'exit' to break the loop           "
+        + "\x1B[0m" + "|")
