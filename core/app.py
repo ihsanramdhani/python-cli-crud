@@ -81,6 +81,7 @@ class App:
                 self.helper.database.remove(data)
                 self.helper.operation_success()
                 flag = True
+                self.helper.refresh_id()
                 self.helper.print_all_data()
 
         if flag == False:

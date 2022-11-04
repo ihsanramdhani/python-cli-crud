@@ -16,7 +16,14 @@ class Helper:
             print(f"Name: {data['name']}")
             print(f"Division: {data['division']}")
             print(f"Age: {data['age']}")
-            print()     
+            print()
+
+    def refresh_id(self):
+        index = 1
+        for data in self.database:
+            data['id'] = index
+            index += 1
+
 
     def input_name(self):
         var = input("Insert name: ")
