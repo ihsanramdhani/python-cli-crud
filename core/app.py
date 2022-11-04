@@ -51,20 +51,14 @@ class App:
         flag = False
         for data in self.helper.database:
             if int(choice) == data["id"]:
-                name = self.helper.input_name()
-                division = self.helper.input_division()
-                age = self.helper.input_age()
+                data["name"] = self.helper.input_name()
+                data["division"] = self.helper.input_division()
+                data["age"] = self.helper.input_age()
 
-                data = {
-                    "id": data['id'],
-                    "name": name,
-                    "division": division,
-                    "age": age
-                }
                 validation = self.helper.validate(data)
                 if not validation:
                     return False
-                    
+                
                 self.helper.operation_success()
 
                 print()
