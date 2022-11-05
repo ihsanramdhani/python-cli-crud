@@ -38,15 +38,19 @@ class App:
         flag = False
         for data in self.helper.database:
             if choice == data["id"]:
-                self.helper.add_data()
+                data["name"] = input("Insert name: ")
+                data["division"] = input("Insert division: ")
+                data["age"] = input("Insert age: ")
 
                 validation = self.helper.validate(data)
                 if not validation:
                     return False
                 
                 self.helper.operation_success()
-                self.helper.print_data(choice)
                 flag = True
+
+        self.helper.print_data(choice)
+                
 
         if flag == False:
             self.helper.data_not_found()
