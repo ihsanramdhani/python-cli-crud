@@ -10,7 +10,6 @@ class Helper:
 
         return data
 
-
     def validate(self, data):
         if data['name'] == '' or data['division'] == '' or data['age'] == '':
             print()
@@ -42,9 +41,6 @@ class Helper:
         for data in self.database:
             data['id'] = index
             index += 1
-
-
-
 
     def operation_success(self):
         print()
