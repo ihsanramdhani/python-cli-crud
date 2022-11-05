@@ -5,7 +5,8 @@ class App:
         self.helper = Helper()
 
     def create_data(self):
-        data = self.helper.add_data()
+        data = {}
+        self.helper.add_data(data)
         data['id'] = len(self.helper.database) + 1
 
         validation = self.helper.validate(data)
@@ -38,18 +39,17 @@ class App:
         flag = False
         for data in self.helper.database:
             if choice == data["id"]:
-                data["name"] = input("Insert name: ")
-                data["division"] = input("Insert division: ")
-                data["age"] = input("Insert age: ")
+                self.helper.add_data(data)
 
                 validation = self.helper.validate(data)
                 if not validation:
                     return False
                 
+                self.helper.print_data(choice)
                 self.helper.operation_success()
                 flag = True
 
-        self.helper.print_data(choice)
+                
                 
 
         if flag == False:
