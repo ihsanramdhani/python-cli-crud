@@ -2,6 +2,15 @@ class Helper:
     def __init__(self):
         self.database = []
 
+    def add_data(self):
+        data = {}
+        data["name"] = input("Insert name: ")
+        data["division"] = input("Insert division: ")
+        data["age"] = input("Insert age: ")
+
+        return data
+
+
     def validate(self, data):
         if data['name'] == '' or data['division'] == '' or data['age'] == '':
             print()
@@ -35,17 +44,7 @@ class Helper:
             index += 1
 
 
-    def input_name(self):
-        var = input("Insert name: ")
-        return var
-    
-    def input_division(self):
-        var = input("Insert division: ")
-        return var
 
-    def input_age(self):
-        var = input("Insert age: ")
-        return var
 
     def operation_success(self):
         print()

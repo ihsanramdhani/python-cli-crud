@@ -5,16 +5,8 @@ class App:
         self.helper = Helper()
 
     def create_data(self):
-        name = self.helper.input_name()
-        division = self.helper.input_division()
-        age = self.helper.input_age()
-
-        data = {
-            "id": len(self.helper.database) + 1,
-            "name": name,
-            "division": division,
-            "age": age
-        }
+        data = self.helper.add_data()
+        data['id'] = len(self.helper.database) + 1
 
         validation = self.helper.validate(data)
         if not validation:
@@ -46,9 +38,7 @@ class App:
         flag = False
         for data in self.helper.database:
             if choice == data["id"]:
-                data["name"] = self.helper.input_name()
-                data["division"] = self.helper.input_division()
-                data["age"] = self.helper.input_age()
+                self.helper.add_data()
 
                 validation = self.helper.validate(data)
                 if not validation:
@@ -75,5 +65,3 @@ class App:
 
         if flag == False:
             self.helper.data_not_found()
-
-
